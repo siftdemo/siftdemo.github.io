@@ -25,11 +25,6 @@
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js">
 	</script>
 
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/modules/streamgraph.js"></script>
-	<script src="https://code.highcharts.com/modules/series-label.js"></script>
-	<script src="https://code.highcharts.com/modules/annotations.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 	<script type="text/javascript" class="init">
 
@@ -125,139 +120,6 @@ $(document).ready(function() {
 
     table.columns('.initialhide').visible( false );
 
-    //Streamchart
-    var colors = Highcharts.getOptions().colors;
-Highcharts.chart('container', {
-
-    chart: {
-        type: 'streamgraph',
-        marginBottom: 30,
-        zoomType: 'x'
-    },
-
-    // Make sure connected countries have similar colors
-    colors: [
-        colors[0],
-        colors[1],
-        colors[2],
-        colors[3],
-        colors[4],
-        colors[5],
-        colors[6],
-        colors[7],
-        colors[8],
-        colors[9],
-        colors[0],
-        colors[1],
-        colors[2],
-        colors[3],
-        colors[4],
-        colors[5],
-        colors[6],
-        colors[7],
-        colors[8],
-        colors[9],
-        colors[0]
-    ],
-
-    title: {
-        floating: true,
-        align: 'left',
-        text: 'Two Week Available Appointments By Region'
-    },
-    //subtitle: {
-    //    floating: true,
-    //    align: 'left',
-    //    y: 30,
-    //    text: '2 Weeks'
-    //},
-
-    xAxis: {
-        maxPadding: 0,
-        type: 'category',
-        crosshair: true,
-        categories: [
-            '2018-02-18',
-            '2018-02-19',
-            '2018-02-20',
-            '2018-02-21',
-            '2018-02-22',
-            '2018-02-23',
-            '2018-02-24',
-            '2018-02-25',
-            '2018-02-26',
-            '2018-02-27',
-            '2018-02-28',
-            '2018-03-01',
-            '2018-03-02',
-            '2018-03-03',
-            '2018-03-04'
-        ],
-        labels: {
-            align: 'left',
-            reserveSpace: false,
-            rotation: 270
-        },
-        lineWidth: 0,
-        margin: 20,
-        tickWidth: 0
-    },
-
-    yAxis: {
-        visible: false,
-        startOnTick: false,
-        endOnTick: false
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    //annotations: [{
-    //    labels: [{
-    //        point: {
-    //            x: 5.5,
-    //            xAxis: 0,
-    //            y: 30,
-    //            yAxis: 0
-    //        },
-    //        text: 'example<br>one<br>here'
-    //    }, {
-    //        point: {
-    //            x: 18,
-    //            xAxis: 0,
-    //            y: 90,
-    //            yAxis: 0
-    //        },
-    //        text: 'exmaple,<br>two here'
-    //    }],
-    //    labelOptions: {
-    //        backgroundColor: 'rgba(255,255,255,0.5)',
-    //        borderColor: 'silver'
-    //    }
-    //}],
-
-    plotOptions: {
-        series: {
-            label: {
-                minFontSize: 5,
-                maxFontSize: 15,
-                style: {
-                    color: 'rgba(255,255,255,0.75)'
-                }
-            }
-        }
-    },
-
-    // Data parsed with olympic-medals.node.js
-    series: [{"name":"Tennessee - Saint Thomas Health","data":[3,703,1097,1410,1528,1277,0,0,2183,2539,2277,2557,1638,0,0]},{"name":"Illinois - AMITA Health","data":[0,492,492,492,492,492,0,0,0,0,0,0,0,0,0]},{"name":"Indiana -  St. Vincent Evansville","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"name":"Binghamton - Our Lady of Lourdes","data":[120,345,358,354,360,359,30,0,2,16,10,15,15,0,0]},{"name":"Amsterdam, NY - St. Mary's Healthcare Amsterdam","data":[0,14,14,14,14,14,0,0,14,14,14,14,14,0,0]},{"name":"Michigan - Borgess Health","data":[0,275,395,681,580,488,6,0,526,822,1018,895,679,13,0]},{"name":"Oklahoma - St. John Health System","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"name":"Texas - Seton Healthcare Family","data":[6,38,80,66,52,38,4,6,50,88,63,62,42,4,0]},{"name":"Bridgeport - St. Vincent's - Connecticut","data":[0,37,32,35,32,39,0,0,40,32,35,32,40,0,0]},{"name":"Kansas - Via Christi Health","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"name":"Texas - Providence Healthcare Network - Waco","data":[0,0,0,0,0,0,0,0,4,0,0,1,3,0,0]},{"name":"Jacksonville - St. Vincent's Healthcare","data":[0,6,2,4,10,6,0,0,16,10,8,12,12,0,0]},{"name":"Washington, DC - Providence - DC","data":[0,18,125,30,16,14,0,0,32,127,30,16,14,0,0]},{"name":"Wisconsin - Ministry Health Care","data":[0,523,676,809,689,742,29,0,941,816,1172,1045,1184,26,0]},{"name":"Birmingham - St. Vincent's Birmingham - Samford","data":[0,0,8,22,22,22,0,0,22,22,22,22,22,0,0]},{"name":"Wisconsin - Columbia St. Mary's","data":[0,0,6,2,10,4,2,0,6,10,4,14,10,2,0]},{"name":"Gulf Coast - Sacred Heart Health System","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},{"name":"Wisconsin - Wheaton Franciscan Healthcare","data":[1,0,0,0,14,14,0,0,14,18,20,24,16,0,0]},{"name":"Wisconsin - Affinity Health Care","data":[0,0,0,0,8,3,0,0,5,14,8,14,7,0,0]},{"name":"Birmingham - St. Vincent's Birmingham","data":[0,127,144,126,152,130,0,0,179,168,157,168,129,0,0]},{"name":"Indiana - St. Vincent","data":[0,0,3,3,3,3,0,0,3,2,3,3,3,0,0]}],
-
-    exporting: {
-        sourceWidth: 800,
-        sourceHeight: 600
-    }
-
-});
 
 } );
 
@@ -283,21 +145,48 @@ Highcharts.chart('container', {
     	clear: both;
     	padding-top: 5px;
 	}
-	#container {
-		/* 
-		min-width: 310px;
-		max-width: 800px;
-		*/
-		min-width: 100%;
-		max-width: 100%;
-		height: 800px;
-		margin: 0 auto
-	}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 </style>
 
 
-</head>
 <body>
+
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="analytics.html">Analytics</a>
+</div>
+
+<div style="margin: 10px">
   <h3>Ascension Available Scheduling Blocks</h3>
 
   <div>
@@ -349,9 +238,7 @@ Highcharts.chart('container', {
 </thead>
 <tbody></tbody>
 </table>
-</br>
-</br>
-<div id="container"></div>
+</div>
 
 </body>
 </html>
